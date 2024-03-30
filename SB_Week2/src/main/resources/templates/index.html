@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập</title>
+    <style>
+        body, html {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li{
+            font-family: Arial, sans-serif;
+            font-size: larger;
+        }
+        p {
+            color: red;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+            background-image: url("https://t1.gstatic.com/licensed-image?q=tbn:ANd9GcT515JhCeA0rherkIga0J4a3WtNJCFrvMzHYCHEtFW9Moe082VSp_-il10TQ9_bhCcHgdbU3PnjDlU6xT7JD3Q");
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input, button {
+            border: 2px solid gray;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="content">
+    <form action="/login" method="post">
+        <ul>
+            <li>Nhập tên tài khoản : <input type="text" name="taikhoan" placeholder="Nhập tài khoản"></li>
+            <li>Nhập mật khẩu: <input type="password" name="matkhau" placeholder="Nhập mật khẩu"></li>
+            <button type="submit">Đăng nhập</button>
+            <p th:text="${loidangnhap}"></p>
+        </ul>
+
+    </form>
+
+</div>
+
+</body>
+</html>
