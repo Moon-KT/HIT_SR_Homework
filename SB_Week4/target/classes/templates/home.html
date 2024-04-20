@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        table,td{
+            border: 1px solid darkblue ;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Account</h1>
+    <table>
+        <tr>
+            <td>STT</td>
+            <td>UseName</td>
+            <td>Password</td>
+            <td>Action</td>
+        </tr>
+
+        <th:block th:each=" i : ${List}">
+            <tr>
+                <td th:text="${List.indexOf(i)} + 1"></td>
+                <td th:text="${i.useName}"></td>
+                <td th:text="${i.passWord}"></td>
+                <td><a th:href="@{/list/pro(name=${i.useName})}">Detail</a></td>
+            </tr>
+        </th:block>
+
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html, body{
+            height: 100%;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+<div>
+    <h1>Delete account by name</h1>
+    <form action="/delete/pro" method="post">
+        <span>Enter user : </span>
+        <input type="text" name="name">
+        <button type="submit">Delete</button>
+    </form>
+<p th:text="${er}"></p>
+</div>
+</body>
+</html>

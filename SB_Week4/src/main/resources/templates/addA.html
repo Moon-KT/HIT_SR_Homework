@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html,body{
+            height: 100%;
+        }
+        body{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+
+        a{
+            text-decoration: none;
+            border: 1px solid aqua;
+            font-size: larger;
+            height: max-content;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>Add new account</h1>
+    <form action="/add/pro" method="post">
+        <span>Enter name: </span>
+        <input type="text" name="name">
+        <br>
+        <span>Enter password: </span>
+        <input type="text" name="pass">
+        <br>
+        <span>Confirm password: </span>
+        <input type="text" name="passreturn">
+        <br>
+        <button type="submit">Add</button>
+    </form>
+<p th:text="${re}"></p>
+</div>
+</body>
+</html>
