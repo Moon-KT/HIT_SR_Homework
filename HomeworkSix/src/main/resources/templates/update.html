@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/update.css">
+</head>
+<body>
+    <form action="/account/update/proceed" method="post" th:object="${account}" id="update">
+        <input type="hidden" th:value="${account.id}" name="id">
+        <p>Username</p>
+        <label>
+            <input type="text" th:value="${account.username}" th:field="${account.username}">
+        </label>
+        <p>Password</p>
+        <label for="password"></label>
+        <input type="password" th:value="${account.password}" th:field="${account.password}" id="password">
+        <p>Confirm password</p>
+        <label for="confirm"></label>
+        <input type="password" th:value="${account.password}" id="confirm">
+        <p>Email</p>
+        <label>
+            <input type="text" th:value="${account.email}" th:field="${account.email}">
+        </label>
+        <p>Created time</p>
+        <label>
+            <input type="text" th:value="${account.createdTime}" th:field="${account.createdTime}" disabled>
+        </label>
+        <p>Last modified time</p>
+        <label>
+            <input type="text" th:value="${account.lastModifiedTime}" th:field="${account.lastModifiedTime}" disabled>
+        </label>
+        <button type="submit">Update</button>
+        <p th:text="${session.err}" id="err"></p>
+    </form>
+    <a href="/home">Back</a>
+    <script src="/js/update.js"></script>
+</body>
+</html>

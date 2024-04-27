@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+</head>
+<body>
+    <form action="/account/search">
+        <label for="username"></label>
+        <input type="text" id="username" placeholder="Enter your username..." name="name">
+        <button type="submit">Search</button>
+    </form>
+    <table border="1">
+        <tr>
+            <td>ID</td>
+            <td>Username</td>
+            <td>Password</td>
+            <td>Email</td>
+            <td>Created time</td>
+            <td>Last modified time</td>
+            <td colspan="2">Action</td>
+        </tr>
+        <th:block th:each="a : ${accounts}">
+            <tr>
+                <td th:text="${a.id}"></td>
+                <td th:text="${a.username}"></td>
+                <td th:text="${a.password}"></td>
+                <td th:text="${a.email}"></td>
+                <td th:text="${a.createdTime}"></td>
+                <td th:text="${a.lastModifiedTime}"></td>
+                <td>
+                    <a th:href="@{/account/delete(id=${a.id})}">Delete</a>
+                </td>
+                <td>
+                    <a th:href="@{/account/update(id=${a.id})}">Update</a>
+                </td>
+            </tr>
+        </th:block>
+    </table>
+    <a href="/api/account/view">View accounts (JSON format)</a>
+    <a href="/logout">Logout</a>
+</body>
+</html>
